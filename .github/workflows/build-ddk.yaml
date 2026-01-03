@@ -43,12 +43,8 @@ jobs:
         cd kernel
 
         echo "=== Building kernelsu.ko for KMI: ${{ inputs.kmi }} ==="
-
-        make -C / \
-         M=$GITHUB_WORKSPACE/kernel \
-         CONFIG_KSU=m \
-         CC=clang \
-         modules
+        ls -ll
+        CC=clang make
 
 
         
@@ -57,7 +53,7 @@ jobs:
         # Create output directory in GitHub workspace
         mkdir -p /github/workspace/out
 
-        cp /kernel/hello.ko /github/workspace/out/${{ inputs.kmi }}_kernelsu.ko
+        cp /hello.ko /github/workspace/out/${{ inputs.kmi }}_kernelsu.ko
 
     - name: Upload kernelsu.ko artifact
       uses: actions/upload-artifact@v6
