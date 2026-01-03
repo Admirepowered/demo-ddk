@@ -49,7 +49,7 @@ jobs:
 
         
         echo "=== Build completed ==="
-
+        ls -ll
         # Create output directory in GitHub workspace
         mkdir -p /github/workspace/out
 
