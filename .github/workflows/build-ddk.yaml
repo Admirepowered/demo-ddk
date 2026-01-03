@@ -44,7 +44,7 @@ jobs:
 
         echo "=== Building kernelsu.ko for KMI: ${{ inputs.kmi }} ==="
         ls -ll
-        CC=clang make
+        CONFIG_KSU=m CC=clang make
 
 
         
