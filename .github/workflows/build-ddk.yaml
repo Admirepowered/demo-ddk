@@ -43,8 +43,8 @@ jobs:
         cd kernel
 
         echo "=== Building kernelsu.ko for KMI: ${{ inputs.kmi }} ==="
-        ls -ll
-        make -C /kernel \
+
+        make -C / \
          M=$GITHUB_WORKSPACE/kernel \
          CONFIG_KSU=m \
          CC=clang \
