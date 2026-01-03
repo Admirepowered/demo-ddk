@@ -38,12 +38,12 @@ jobs:
 
     - name: Build kernelsu.ko
       run: |
-        git config --global --add safe.directory /__w/KernelSU/KernelSU
+        git config --global --add safe.directory /__w/demo-ddk/demo-ddk
 
         cd kernel
 
         echo "=== Building kernelsu.ko for KMI: ${{ inputs.kmi }} ==="
-
+        ls -ll
         make -C /kernel \
          M=$GITHUB_WORKSPACE/kernel \
          CONFIG_KSU=m \
