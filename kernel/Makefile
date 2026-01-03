@@ -14,6 +14,8 @@ compdb:
 clean:
 	make -C $(KDIR) M=$(MDIR) clean
 	rm check_symbol
+check_symbol: tools/check_symbol.c
+	$(CC) tools/check_symbol.c -o check_symbol
 format:
 	find . \( -name "*.c" -o -name "*.h" \) -print0 | xargs -0 clang-format -i
 check-format:
