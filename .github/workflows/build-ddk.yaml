@@ -2,6 +2,16 @@ name: Build demo Kernel Module
 
 on:
   workflow_dispatch:
+    inputs:
+      kmi:
+        description: 'KMI version'
+        required: true
+        type: string
+      ddk_release:
+        description: 'DDK release version'
+        required: false
+        default: '20251104'
+        type: string
   workflow_call:
     inputs:
       kmi:
